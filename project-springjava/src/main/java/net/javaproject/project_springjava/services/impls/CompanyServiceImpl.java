@@ -8,15 +8,17 @@ import net.javaproject.project_springjava.mappers.CompanyMapper;
 import net.javaproject.project_springjava.repositories.CompanyRepository;
 import net.javaproject.project_springjava.repositories.VehicleRepository;
 import net.javaproject.project_springjava.services.CompanyService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
+//@AllArgsConstructor
 public class CompanyServiceImpl implements CompanyService {
 
+    @Autowired
     private CompanyRepository companyRepository;
     public CompanyDto createCompany(CompanyDto companyDto) {
         Company company = CompanyMapper.mapToCompany(companyDto);

@@ -4,17 +4,19 @@ import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 import net.javaproject.project_springjava.dtos.CompanyDto;
 import net.javaproject.project_springjava.services.CompanyService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@AllArgsConstructor
+//@AllArgsConstructor
 @RestController
 @RequestMapping("/companies")
 public class CompanyController {
 
+    @Autowired
     private CompanyService companyService;
 
     @PostMapping

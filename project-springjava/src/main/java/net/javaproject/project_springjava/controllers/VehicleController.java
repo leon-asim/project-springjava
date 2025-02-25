@@ -4,17 +4,19 @@ import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 import net.javaproject.project_springjava.dtos.VehicleDto;
 import net.javaproject.project_springjava.services.VehicleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@AllArgsConstructor
+//@AllArgsConstructor
 @RestController
 @RequestMapping("/vehicles")
 public class VehicleController {
 
+    @Autowired
     private VehicleService vehicleService;
 
     @PostMapping

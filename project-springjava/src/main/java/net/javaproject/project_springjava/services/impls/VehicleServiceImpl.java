@@ -10,16 +10,20 @@ import net.javaproject.project_springjava.mappers.VehicleMapper;
 import net.javaproject.project_springjava.repositories.CompanyRepository;
 import net.javaproject.project_springjava.repositories.VehicleRepository;
 import net.javaproject.project_springjava.services.VehicleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
+//@AllArgsConstructor
 public class VehicleServiceImpl implements VehicleService {
 
+    @Autowired
     private VehicleRepository vehicleRepository;
+
+    @Autowired
     private CompanyRepository companyRepository;
     @Override
     public VehicleDto createVehicle(VehicleDto vehicleDto) {
