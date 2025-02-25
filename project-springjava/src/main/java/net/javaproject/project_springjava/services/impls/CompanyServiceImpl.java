@@ -9,6 +9,9 @@ import net.javaproject.project_springjava.repositories.CompanyRepository;
 import net.javaproject.project_springjava.repositories.VehicleRepository;
 import net.javaproject.project_springjava.services.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,6 +40,14 @@ public class CompanyServiceImpl implements CompanyService {
     public List<CompanyDto> getAllCompanies() {
         List<Company> companies = companyRepository.findAll();
         return companies.stream().map(CompanyMapper::mapToCompanyDto).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<CompanyDto> getAllCompaniesPage(int pageNum, int pageSize) {
+        Pageable pageable = PageRequest.of(pageNum, pageSize);
+        Page<Company> companies = companyRepository.findAll(pageable);
+        List<Company> companyList = companies.getContent();
+        return companyList.stream().map(CompanyMapper::mapToCompanyDto).collect(Collectors.toList());
     }
 
     @Override

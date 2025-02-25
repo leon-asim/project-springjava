@@ -43,6 +43,17 @@ public class CompanyController {
         return ResponseEntity.ok(companyDtos);
     }
 
+    @GetMapping("/page")
+    @Operation(summary  = "Get all companies",
+            description = "This method shows paginated list of companies")
+    public ResponseEntity<List<CompanyDto>> getAllCompaniesPaged(
+            @RequestParam(value = "pageNum", defaultValue = "0", required = false) int pageNum,
+            @RequestParam(value = "pageSize", defaultValue = "10", required = false) int pageSize
+    ) {
+        List<CompanyDto> companyDtos = companyService.getAllCompaniesPage(pageNum, pageSize);
+        return ResponseEntity.ok(companyDtos);
+    }
+
     @PutMapping("{id}")
     @Operation(summary  = "Update company",
             description = "This method updates a company by it's id")

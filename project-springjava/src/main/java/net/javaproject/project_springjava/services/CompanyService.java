@@ -10,6 +10,7 @@ public interface CompanyService {
     CompanyDto getCompany(Long CompanyId);
 
     List<CompanyDto> getAllCompanies();
+    List<CompanyDto> getAllCompaniesPage(int pageNum, int pageSize);
 
     CompanyDto updateCompany(Long companyId, CompanyDto companyDto);
 
