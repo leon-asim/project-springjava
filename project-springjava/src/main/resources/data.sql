@@ -1,0 +1,1 @@
+INSERT INTO vehicles (brand, registration) VALUES ('mercedes', '2314124m');

@@ -14,7 +14,7 @@ import java.util.Map;
 
 @Configuration
 public class EndpointListener {
-    private final Logger LOGGER = LoggerFactory.getLogger("EndpointListener.class");
+    private final Logger LOGGER = LoggerFactory.getLogger(EndpointListener.class);
 
     @EventListener
     public void handleContextRefresh(ContextRefreshedEvent event) {
