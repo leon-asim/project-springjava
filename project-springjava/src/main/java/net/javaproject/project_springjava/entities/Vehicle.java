@@ -33,4 +33,9 @@ public class Vehicle {
     public void assignToCompany(Company company) {
         this.company = company;
     }
+
+    public Vehicle(String brand, String registration) {
+        this.brand = brand;
+        this.registration = registration;
+    }
 }

@@ -27,4 +27,9 @@ public class Company {
     @JsonIgnore
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     private Set<Vehicle> vehicles = new HashSet<>();
+
+    public Company(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
 }

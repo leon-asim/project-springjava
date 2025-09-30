@@ -17,4 +17,9 @@ public class CompanyDto {
     private String name;
     private String address;
     private Set<Vehicle> vehicles;
+
+    public CompanyDto(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
 }

@@ -1,0 +1,9 @@
+application:
+  companies:
+    -
+      name: company1
+      address: address1
+
+    -
+      name: company2
+      address: address2

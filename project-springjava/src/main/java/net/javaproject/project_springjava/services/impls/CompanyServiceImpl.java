@@ -69,4 +69,9 @@ public class CompanyServiceImpl implements CompanyService {
                 .orElseThrow(()-> new ObjectNotFoundException("Company with id: " + companyId + " doesn't exist"));
         companyRepository.deleteById(companyId);
     }
+
+    @Override
+    public Company getByName(String name) {
+        return companyRepository.findCompanyByName(name);
+    }
 }

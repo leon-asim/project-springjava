@@ -78,4 +78,14 @@ public class VehicleServiceImpl implements VehicleService {
         Vehicle savedVehicle = vehicleRepository.save(vehicle);
         return VehicleMapper.mapToVehicleDto(savedVehicle);
     }
+
+    @Override
+    public Vehicle getVehicleByRegistration(String registration) {
+        return vehicleRepository.findVehicleByRegistration(registration);
+    }
+
+    @Override
+    public Vehicle getVehicleByCompany(Long companyId) {
+        return vehicleRepository.findVehiclesByCompany(companyRepository.findById(companyId).get());
+    }
 }

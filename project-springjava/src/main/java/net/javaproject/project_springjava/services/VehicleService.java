@@ -17,4 +17,8 @@ public interface VehicleService {
     void deleteVehicle(Long vehicleId);
 
     VehicleDto assignCompanyToVehicle(Long vehicleId, Long companyId);
+
+    Vehicle getVehicleByRegistration(String registration);
+
+    Vehicle getVehicleByCompany(Long companyId);
 }
